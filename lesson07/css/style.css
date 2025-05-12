@@ -1,0 +1,142 @@
+.wrapper {
+  font-family: sans-serif;
+}
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.product {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 20px;
+}
+.product__images {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.product__images-thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.product__images-thumbnails img {
+  max-width: 80px;
+  min-height: 93px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.6;
+  transition: 0.6s all;
+}
+.product__images-thumbnails img.active-thumbnail {
+  opacity: 1;
+}
+.product__images-thumbnails img:hover {
+  opacity: 1;
+}
+.product__images-preview {
+  max-width: 410px;
+  min-height: 516px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.product__info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.product__info-title {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 40px;
+}
+.product__info-price {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.product__info-price--after {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 48px;
+  letter-spacing: 0.96px;
+}
+.product__info-price--before {
+  color: #a0a0a0;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0.72px;
+  text-decoration-line: line-through;
+}
+.product__info-characteristics {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.characteristics__select-color {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.characteristics__select-color--title {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.characteristics__select-color--list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.characteristics__select-color--item {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #000;
+}
+.color-black {
+  background: #000;
+}
+.color-violet {
+  background: #781dbc;
+}
+.color-red {
+  background: #e10000;
+}
+.color-yellow {
+  background: #e1b000;
+}
+.color-gray {
+  background: #e8e8e8;
+}
+.characteristics__select-memory {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.characteristics__select-memory--item {
+  border-radius: 8px;
+  border: 1px solid #d5d5d5;
+  background: #fff;
+  color: #d5d5d5;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+
+  display: flex;
+  padding: 16px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex: 1 0 0;
+}
+.characteristics__select-memory--item.active {
+  color: #000;
+  border: 1px solid #000;
+}

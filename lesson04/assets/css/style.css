@@ -1,0 +1,19 @@
+*{
+
+}
+.table {
+	width: 100%;
+	margin-bottom: 20px;
+	border: 1px solidrgb(228, 50, 50);
+	border-collapse: collapse; 
+}
+.table th {
+	font-weight: bold;
+	padding: 5px;
+	background:rgb(121, 70, 70);
+	border: 1px solid #;
+}
+.table td {
+	border: 1px solidrgb(45, 13, 105);
+	padding: 5px;
+}

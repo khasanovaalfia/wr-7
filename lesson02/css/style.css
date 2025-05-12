@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+}
+.wrapper{
+    font-family: sans-serif;
+}
+.banner{
+    text-align: center;
+    background: #6e85f7;
+    color: floralwhite;
+    padding: 70px;
+}
+.banner__title{
+font-size: 32px;
+text-transform: uppercase;
+}
+.banner__desc{
+    margin-top: 20px;
+    font-size: 18px;
+}
