@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Forms and CSS</title>
+</head>
+<body>
+    <div class="wrapper">
+      <div class="auth-form">
+        <form action="" class="form">
+          <div class="form-content">
+            <h2 class="form-title">Авторизаця</h2>
+            <p class="form-desc">Заполните все поля чтобы войти в систему</p>
+          </div>
+          <div class="form-controll">
+            <label class="form-label" for="email">Email</label>
+            <input
+              class="form-input"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Введите ваш Email"
+            />
+          </div>
+          <div class="form-controll">
+            <div class="form-reset-pass">
+              <label class="form-label" for="password">Пароль</label>
+              <a class="reset-link" href="/reset-password">Забыл пароль?</a>
+            </div>
+            <input
+              class="form-input"
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Введите ваш пароль"
+            />
+          </div>
+          <button class="btn">Войти</button>
+        </form>
+      </div>
+    </div>
+</body>
+</html>
