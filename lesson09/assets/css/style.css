@@ -1,0 +1,182 @@
+/* DMSans */
+/* @font-face: подключает внешний шрифт */
+@font-face {
+  /* font-family: имя шрифта для использования в CSS */
+  font-family: "DM Sans";
+  /* src: путь к файлу шрифта */
+  src: url("../fonts/DMSans/DMSans-Regular.ttf");
+  /* font-weight: насыщенность шрифта (normal = 400, bold = 700, можно числа) */
+  font-weight: normal;
+  /* font-style: стиль шрифта (normal, italic, oblique, числа не поддерживаются) */
+  font-style: 400; /* Ошибка: должно быть normal, italic или oblique */
+}
+@font-face {
+  font-family: "DM Sans";
+  src: url("../fonts/DMSans/DMSans-Medium.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "DM Sans";
+  src: url("../fonts/DMSans/DMSans-SemiBold.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "DM Sans";
+  src: url("../fonts/DMSans/DMSans-Bold.ttf");
+  font-weight: 700;
+  font-style: bold; /* Ошибка: должно быть normal, italic или oblique */
+}
+/* SpaceGrotesk */
+@font-face {
+  font-family: "SpaceGrotesk";
+  src: url("../fonts/SpaceGrotesk/SpaceGrotesk-Regular.ttf");
+  font-weight: 400;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "SpaceGrotesk";
+  src: url("../fonts/SpaceGrotesk/SpaceGrotesk-Medium.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "SpaceGrotesk";
+  src: url("../fonts/SpaceGrotesk/SpaceGrotesk-SemiBold.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "SpaceGrotesk";
+  src: url("../fonts/SpaceGrotesk/SpaceGrotesk-Bold.ttf");
+  font-weight: 700;
+  font-weight: bold;
+}
+
+.wrapper {
+  font-family: "SpaceGrotesk", sans-serif;
+}
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.banner {
+  min-height: 860px;
+  background: #1a1a1a;
+  position: relative;
+}
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 694px;
+  max-height: 630px;
+  width: 100%;
+  height: 100%;
+  border-radius: 262px;
+  background: rgba(217, 255, 137, 0.07);
+  filter: blur(50px); /* blur(50px) — размытие на 50px */
+  z-index: 1;
+}
+.banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 1050px;
+  max-height: 860px;
+  width: 100%;
+  height: 100%;
+  border-radius: 380px;
+  background: rgba(182, 200, 226, 0.06);
+  filter: blur(50px); /* blur(50px) — размытие на 50px */
+  z-index: 1;
+}
+.header {
+  /* display: тип отображения, flex — флекс-контейнер */
+  display: flex;
+  /* align-items: выравнивание по поперечной оси (вертикали) */
+  align-items: center;
+  /* justify-content: выравнивание по главной оси (горизонтали) */
+  justify-content: space-between;
+  /* color: цвет текста */
+  color: #fff;
+  /* padding: внутренний отступ (20px сверху/снизу, 0 слева/справа) */
+  padding: 20px 0;
+  /* position: способ позиционирования, relative — относительно обычного положения */
+  position: relative;
+  /* z-index: порядок наложения, 99 — выше большинства элементов */
+  z-index: 99;
+}
+.logo {
+  /* max-width: максимальная ширина элемента */
+  max-width: 100px;
+}
+.logo img {
+  /* width: ширина изображения, 100% — по ширине родителя */
+  width: 100%;
+}
+.nav {
+  /* display: flex — флекс-контейнер для навигации */
+  display: flex;
+  /* align-items: выравнивание по вертикали */
+  align-items: center;
+  /* gap: расстояние между элементами (24px) */
+  gap: 24px;
+}
+.nav__link {
+  transition: 0.6s all;
+}
+.nav__link:hover {
+  color: #d4fc73;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  padding: 16px 32px;
+  border-radius: 12px;
+  background: gray;
+  border: solid 1px gray;
+  color: #000;
+}
+.btn--primary {
+  background: #d4fc73;
+  border: solid 1px #d4fc73;
+}
+.btn--secondary {
+  background: transparent;
+  border: solid 1px #484848;
+  color: white;
+}
+
+.banner__main {
+  margin-top: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.banner__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 670px;
+}
+.banner__content--title {
+  color: #fff;
+  font-size: 78px;
+  font-weight: 500;
+  line-height: 90px;
+  letter-spacing: -1.5px;
+}
+.banner__content--description {
+  color: #fff;
+  font-family: "DM Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px;
+}
+.banner__content--btn {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
