@@ -1,0 +1,80 @@
+.wrapper {
+  font-family: "Inter", sans-serif;
+}
+.auth-form {
+  background: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 380px;
+  width: 100%;
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+}
+.form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.form-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+.form-desc {
+  font-size: 14px;
+  color: #666;
+}
+.form-controll {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.form-reset-pass {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.reset-link {
+  font-size: 14px;
+  color: #005ce6;
+  text-decoration: underline !important;
+}
+.form-label {
+  font-size: 14px;
+}
+.form-input {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: solid 1px #ccc;
+  transition: 0.6s all;
+}
+.form-input:focus-visible {
+  border: solid 1px #0066ff;
+}
+.btn {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: solid 1px #0c1016;
+  background: #0c1016;
+  color: #fff;
+  transition: 0.6s all;
+}
+.btn:hover {
+  background: #252a30;
+  border: solid 1px #252a30;
+}
+.btn--primary {
+  background: #0066ff;
+  border: solid 1px #0066ff;
+}
+.btn--primary:hover {
+  background: #005ce6;
+  border: solid 1px #005ce6;
+}
