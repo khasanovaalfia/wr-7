@@ -127,3 +127,8 @@ body {
   max-width: max-content;
   margin: 0 auto;
 }
+.content-social{
+ display: flex;
+  align-items: center;
+  gap: 5px 5px;
+}
