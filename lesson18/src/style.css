@@ -1,0 +1,179 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.banner {
+  width: 100%;
+  min-height: 300px;
+  background-color: rgb(255, 255, 255);
+  color: #242424;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  font-weight: 600;
+  position: relative;
+}
+.banner h1 {
+  z-index: 999;
+}
+.hero-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.hero-image svg {
+  width: 100%;
+  height: 100%;
+  fill: rgb(245, 245, 245);
+}
+
+#cards-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+.container {
+  max-width: 1420px;
+  margin: 0 auto;
+  padding: 20px;
+}
+/* Карточка персонажа */
+.character-card {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background-color: #333;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.character-card__img-wrapper {
+  flex-shrink: 0;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.character-card__img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.character-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.character-card__section {
+  margin-bottom: 8px;
+}
+
+.character-card__external-link {
+  color: #fbd261;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.character-card__external-link:hover {
+  color: #fbd261;
+  text-decoration: underline;
+}
+
+.character-card__status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95em;
+  color: #bdbdbd;
+}
+
+.character-card__status-icon {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #f5c518;
+}
+.character-card__status-icon--alive {
+  background: #4caf50;
+}
+.character-card__status-icon--dead {
+  background: #f44336;
+}
+.character-card__status-icon--unknown {
+  background: #bdbdbd;
+}
+
+.character-card__text-gray {
+  color: #bdbdbd;
+  font-size: 0.95em;
+}
+.episode-info__content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  background-color: #333;
+  border-radius: 8px;
+  color: #f5f5f5;
+  margin-top: 20px;
+}
+
+/* -------- */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.pagination button {
+  padding: 8px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 6px;
+  background: #f5c518;
+  color: #242424;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.pagination button:disabled {
+  background: #bdbdbd;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-size: 1.1em;
+  color: #fff;
+  font-weight: 500;
+}
