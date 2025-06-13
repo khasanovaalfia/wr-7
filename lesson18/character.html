@@ -23,56 +23,73 @@
         </svg>
       </div>
     </div>
+    <!-- ...existing code... -->
     <div id="character-info">Загрузка...</div>
     <script>
       const params = new URLSearchParams(window.location.search);
       const id = params.get("id");
       const container = document.getElementById("character-info");
 
-      if (id) {
-        fetch(`https://rickandmortyapi.com/api/character/${id}`)
-          .then((res) => res.json())
-          .then(async (data) => {
-            let firstEpisodeName = "";
-            if (data.episode && data.episode.length) {
+      async function loadCharacter() {
+        if (!id) {
+          container.textContent = "Не указан ID персонажа";
+          return;
+        }
+        try {
+          const res = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
+          if (!res.ok) throw new Error();
+          const data = await res.json();
+
+          let firstEpisodeName = "Unknown";
+          if (data.episode && data.episode.length) {
+            try {
               const epRes = await fetch(data.episode[0]);
-              const epData = await epRes.json();
-              firstEpisodeName = `<a href='episode.html?id=${epData.id}'>${epData.name}</a>`;
-            }
-            let locationName = "";
-            if (data.location && data.location.url) {
-              const locId = data.location.url.split("/").pop();
-              locationName = `<a href='location.html?id=${locId}'>${data.location.name}</a>`;
-            } else {
-              locationName = data.location ? data.location.name : "Unknown";
-            }
-            container.innerHTML = `
-            <div class='episode-info__content container'>
+              if (epRes.ok) {
+                const epData = await epRes.json();
+                firstEpisodeName = `<a href="episode.html?id=${epData.id}">${epData.name}</a>`;
+              }
+            } catch {}
+          }
+
+          let locationName = "Unknown";
+          if (data.location && data.location.url && data.location.url.split("/").pop()) {
+            const locId = data.location.url.split("/").pop();
+            locationName = `<a href="location.html?id=${locId}">${data.location.name}</a>`;
+          } else if (data.location && data.location.name) {
+            locationName = data.location.name;
+          }
+
+          // Форматирование даты
+          let created = data.created;
+          if (created) {
+            created = new Date(created).toLocaleString();
+          }
+
+          container.innerHTML = `
+            <div class="episode-info__content container">
               <h1>${data.name}</h1>
-              <div style='display:flex;gap:24px;align-items:center;'>
-                <img src='${data.image}' alt='${
-              data.name
-            }' style='width:180px;height:180px;border-radius:8px;background:#222;'/>
+              <div style="display:flex;gap:24px;align-items:center;">
+                <img src="${data.image}" alt="${data.name}" style="width:180px;height:180px;border-radius:8px;background:#222;"/>
                 <div>
                   <p><b>Status:</b> ${data.status}</p>
                   <p><b>Species:</b> ${data.species}</p>
                   <p><b>Type:</b> ${data.type || "Unknown"}</p>
                   <p><b>Gender:</b> ${data.gender}</p>
                   <p><b>Location:</b> ${locationName}</p>
-                  <p><b>First seen in:</b> ${firstEpisodeName || "Unknown"}</p>
-                  <p><b>Created:</b> ${data.created}</p>
+                  <p><b>First seen in:</b> ${firstEpisodeName}</p>
+                  <p><b>Created:</b> ${created}</p>
                   <p><b>Episodes count:</b> ${data.episode.length}</p>
                 </div>
               </div>
             </div>
           `;
-          })
-          .catch(() => {
-            container.textContent = "Ошибка загрузки данных о персонаже";
-          });
-      } else {
-        container.textContent = "Не указан id персонажа";
+        } catch {
+          container.textContent = "Ошибка загрузки данных о персонаже";
+        }
       }
+
+      loadCharacter();
     </script>
+<!-- ...existing code... -->
   </body>
 </html>
